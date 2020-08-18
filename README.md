@@ -1,7 +1,7 @@
 # Roulette_Console_App
 Created a Roulette Console based game in C#.
 ### Playing Roulette is a very simple game.
-  A roulette wheel has 38 bins. Thirty-six bins are numbered from 1 to 36. The last two bins contain 0 and 00. The two zero bins are colored green. The others are colored randomly red and black, 18 of each color. As the wheel spins, a ball is dropped into the wheel. When the wheel stops spinning, the ball comes to rest in one bin. See Figure 1.
+  A roulette wheel has 38 bins. Thirty-six bins are numbered from 1 to 36. The last two bins contain 0 and 00. The two zero bins are colored green. The others are colored randomly red and black, 18 of each color. As the wheel spins, a ball is dropped into the wheel. When the wheel stops spinning, the ball comes to rest in one bin.
 ### Betting Betting is much more complicated. 
   The following bets can win:
 1. Numbers: the number of the bin
