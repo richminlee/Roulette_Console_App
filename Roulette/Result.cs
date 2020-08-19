@@ -6,11 +6,7 @@ namespace Roulette
 {
     class Result
     {
-        private readonly string[] _evenOdd = { "Zero", "Odd", "Even" };
-        private readonly string[] _highLow = { "Zero", "Low", "High" };
-        private readonly string[] _dozens = { "0", "1", "2", "3" };
-        private readonly string[] _columns = { "0", "1", "2", "3" };
-        private string[] _result = new string[8];
+        public string[] _result = new string[8];
         public string[] GetResult()
         {
             var player = new WheelData();
@@ -23,34 +19,34 @@ namespace Roulette
             _result[4] = CheckDozen(parsedResult);
             _result[5] = CheckColumn(parsedResult);
             _result[6] = CheckStreet(parsedResult);
-            _result[7] = Check6Num(parsedResult);
+            _result[7] = CheckDoubleRow(parsedResult);
             return _result;
         }
         public string IsHighLow(int result)
         {
-            if (result == 0) return _highLow[0];
-            else if (result < 19) return _highLow[1];
-            else return _highLow[2];
+            if (result == 0) return "zero";
+            else if (result < 19) return "low";
+            else return "high";
         }
         public string CheckEvenOdd(int result)
         {
-            if (result == 0) return _evenOdd[0];
-            else if (result % 2 == 0) return _evenOdd[2];
-            else return _evenOdd[1];
+            if (result == 0) return "zero";
+            else if (result % 2 == 0) return "even";
+            else return "odd";
         }
         public string CheckDozen(int result)
         {
-            if (result == 0) return _dozens[0];
-            else if (result < 13) return _dozens[1];
-            else if (result < 25) return _dozens[2];
-            else return _dozens[3];
+            if (result == 0) return "0";
+            else if (result < 13) return "1";
+            else if (result < 25) return "2";
+            else return "3";
         }
         public string CheckColumn(int result)
         {
-            if (result == 0) return _columns[0];
-            else if (result % 3 == 1) return _columns[1];
-            else if (result % 3 == 2) return _columns[2];
-            else return _columns[3];
+            if (result == 0) return "0";
+            else if (result % 3 == 1) return "1";
+            else if (result % 3 == 2) return "2";
+            else return "3";
         }
         public string CheckStreet(int result)
         {
@@ -58,7 +54,7 @@ namespace Roulette
             else if (result % 3 != 0) return $"{ result / 3 + 1 }";
             else return $"{ result / 3 }";
         }
-        public string Check6Num(int result)
+        public string CheckDoubleRow(int result)
         {
             if (result == 0) return "0";
             else if (result % 6 != 0) return $"{ result / 6 + 1 }";
