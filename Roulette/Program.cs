@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Roulette
 {
@@ -6,7 +7,12 @@ namespace Roulette
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var player = new Result();
+            var result = player.GetResult();
+            foreach(var num in result)
+            {
+                Console.WriteLine(num);
+            }
         }
     }
 }
