@@ -8,7 +8,18 @@ namespace Roulette
     {
         public static void PlayRoulette(int bankRoll)
         {
-            
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("                                   88                                      ");
+            Console.WriteLine("                                   88              ,d      ,d              ");
+            Console.WriteLine("                                   88              88      88              ");
+            Console.WriteLine("8b,dPPYba,  ,adPPYba,  88       88 88  ,adPPYba, MM88MMM MM88MMM, adPPYba, ");
+            Console.WriteLine("88P\'   \"Y8 a8P_____88a 88       88 88 a8P_____88   88      88   a8P_____88 "); 
+            Console.WriteLine("88         8b          88       88 88 8PP          88      88   8PP       ");
+            Console.WriteLine("88         \"8a,   ,a8\" \"8a,   ,a88 88 \"8b,   ,aa   88,     88,  \"8b,   ,aa "); 
+            Console.WriteLine("88          `\"YbbdP\"\'   `\"YbbdP\'Y8 88  `\"Ybbd8\"\'   \"Y888   \"Y888 `\"Ybbd8\"\' ");
+            Console.WriteLine();
+            Console.WriteLine();
             var player = new Result();
             var result = player.GetResult();
             //foreach (var num in result)
@@ -16,14 +27,14 @@ namespace Roulette
             //    Console.WriteLine(num);
             //}
             var bet = new Bet();
+            int betCategoryResult = bet.GetBetCategory();
             Console.WriteLine("Please Enter a Bet Amount!");
             int betAmount = int.Parse(Console.ReadLine());
-            if(betAmount > bankRoll)
+            if (betAmount > bankRoll)
             {
                 Console.WriteLine($"You do not have enough money! You have {bankRoll}");
                 PlayRoulette(bankRoll);
             }
-            int betCategoryResult = bet.GetBetCategory();
             if (betCategoryResult == 1)
             {
                 if (int.Parse(player._result[0]) == bet.GetNumberBet())
